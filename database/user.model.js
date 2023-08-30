@@ -1,9 +1,10 @@
 import { pool } from './db.js';
 
 export const UserModel = {
-  async getUsers() {
+  async getUsers(page=1,pageSize=10) {
     try {
-      const [rows] = await pool.query('SELECT * FROM user ORDER BY ID');
+      const offset = (page-1) *pageSize
+      const [rows] = await pool.query('SELECT * FROM user ORDER BY ID LIMIT ?, ?',[offset,pageSize]);
     //   console.log('Query Result:', rows,fields); 
       return rows;
     } catch (err) {

@@ -2,10 +2,11 @@ import { UserModel } from '../../database/user.model.js';
 import { validationResult } from 'express-validator'
 
 export const getUsers = async (req, res) => {
-  
+    const page = parseInt(req.query.page) || 1;
+  const pageSize = parseInt(req.query.pageSize) || 10;
   
   try {
-    const data = await UserModel.getUsers();
+    const data = await UserModel.getUsers(page,pageSize);
     res.status(200).json(data);
   } catch (err) {
     res.status(500).json({ error: `${err}` });
