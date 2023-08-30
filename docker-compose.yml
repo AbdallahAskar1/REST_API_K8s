@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  mysql:
+    container_name: mysql-container
+    build: ./db
+    
+    networks:
+      - my-network
+
+  express:
+    container_name: express-container
+    build: .
+
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge

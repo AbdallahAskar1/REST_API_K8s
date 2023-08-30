@@ -1,6 +1,6 @@
 import { createPool } from "mysql2/promise";
 const dbConfig = {
-    host: 'localhost',
+    host: 'mysql',
     user: 'root',
     password: '12345678',
     database: 'mydb',
