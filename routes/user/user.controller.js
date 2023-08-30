@@ -1,4 +1,4 @@
-import { UserModel } from '../../database/users.model.js';
+import { UserModel } from '../../database/user.model.js';
 
 export const getUsers = async (req, res) => {
   
