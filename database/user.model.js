@@ -3,8 +3,8 @@ import { pool } from './db.js';
 export const UserModel = {
   async getUsers() {
     try {
-      const [rows, fields] = await pool.query('SELECT * FROM user ORDER BY ID');
-      console.log('Query Result:', rows,fields); 
+      const [rows] = await pool.query('SELECT * FROM user ORDER BY ID');
+    //   console.log('Query Result:', rows,fields); 
       return rows;
     } catch (err) {
       console.error('Query Error:', err);
