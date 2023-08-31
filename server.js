@@ -13,11 +13,11 @@ import { pool } from './database/db.js';
 const waitForDatabase = async () => {
   while (true) {
     try {
-      await pool.query('SELECT * from user'); 
+      await pool.query('SELECT 1'); 
       console.log('Database connected');
       break; 
     } catch (error) {
-      // console.log(error)
+      console.log(error)
       console.log('Waiting for database...');
       await new Promise(resolve => setTimeout(resolve, 10000));
     }
