@@ -19,9 +19,7 @@ Kubecrl apply -f mysql-deployment.yaml
 kubectl apply -f api-deployment.yaml 
 
 ```
-* note:need to wait seconds until API connects with the database before this step 
 4. Forward API service to access API
-
 
 ```
 kubectl port-forward service/api-service 3000:3000
