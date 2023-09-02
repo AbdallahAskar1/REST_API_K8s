@@ -29,7 +29,7 @@ kubectl port-forward service/api-service 3000:3000
 ```
 http://http://127.0.0.1:3000/
 ```
-6. go to swagger docs
+# 6. go to swagger docs
 ```
-ttp://127.0.0.1:3000/doc/
+http://127.0.0.1:3000/doc/
 ```
