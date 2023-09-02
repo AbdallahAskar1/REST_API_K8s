@@ -1,35 +1,37 @@
 # REST_API_K8s
 
 ### local deployment 
-- follow this steps to acces api localy
 
+- Follow these steps to access API locally
+*clone repo*
 1. run minikube cluster 
 ```
 minikube start 
 ```
-2. run mysql deploymet 
+2. Run MySQL deployment 
 ```
 cd deployment-config
-kubect apply -f mysql-deployment.yaml 
+Kubecrl apply -f mysql-deployment.yaml 
 ```
-3. run api deployment 
+3. Run API deployment 
 
 ```
 kubectl apply -f api-deployment.yaml 
 
 ```
-4. forward api service to access api
+* note:need to wait seconds until API connects with the database before this step 
+4. Forward API service to access API
 
 
 ```
 kubectl port-forward service/api-service 3000:3000
 ```
 
-5. go to api 
+5. Go to API 
 ```
 http://http://127.0.0.1:3000/
 ```
-# 6. go to swagger docs
+# 6. Go to Swagger docs
 ```
 http://127.0.0.1:3000/doc/
 ```
